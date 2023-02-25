@@ -4,33 +4,58 @@ const hexSpan = document.querySelector('.hex');
 const mainBgColor = document.querySelector('.app-container');
 
 // const numbersArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-const lettersArray = ['a', 'b', 'c', 'd', 'e', 'f'];
+// const lettersArray = ['a', 'b', 'c', 'd', 'e', 'f'];
+
+const lettersNumbersArray = [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  'a',
+  'b',
+  'c',
+  'd',
+  'e',
+  'f',
+];
 
 const getRandomNumber = () => {
-  const number = Math.floor(Math.random() * 9);
+  const number = Math.floor(Math.random() * lettersNumbersArray.length);
 
   return number;
 };
 
-const getRandomLetter = () => {
-  const number = Math.floor(Math.random() * 6);
+// const getRandomLetter = () => {
+//   const number = Math.floor(Math.random() * 6);
 
-  return lettersArray[number];
-};
+//   return lettersArray[number];
+// };
 
 // get random number
 
 const getRandomColor = () => {
-  const randomArray = [getRandomLetter(), getRandomNumber()];
+  //   const randomArray = [getRandomLetter(), getRandomNumber()];
 
   const getRandomFromArray = () => {
-    const number = Math.floor(Math.random() * 2);
+    let hex = '#';
 
-    console.log(number);
-    return randomArray[number];
+    for (let i = 0; i < 6; i++) {
+      const index = Math.floor(Math.random() * lettersNumbersArray.length);
+
+      hex += lettersNumbersArray[index];
+    }
+
+    console.log(hex);
+    return hex;
   };
 
-  const randomColorHex = `#${getRandomFromArray()}${getRandomFromArray()}${getRandomFromArray()}${getRandomFromArray()}${getRandomFromArray()}${getRandomFromArray()}`;
+  const randomColorHex = `${getRandomFromArray()}`;
 
   return randomColorHex;
 };
