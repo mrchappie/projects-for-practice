@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      img {
+        position: absolute;
+        z-index: 0;
+      }
+
+      .img-container {
+        position: relative;
+        height: 300px;
+      }
+
+      .img-container > div {
+        position: relative;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <!-- Imagine și elemente care se află deasupra imaginii -->
+      <div class="img-container">
+        <img src="https://picsum.photos/250/300" alt="" />
+        <div>
+          <div>
+            <span>💙</span>
+          </div>
+          <div>
+            <button>←</button>
+            <button>→</button>
+          </div>
+          <div>●○○○○○</div>
+        </div>
+      </div>
+      <!-- Textul de sub imagine -->
+      <div>
+        <div>
+          <span>Race, Slovenia</span>
+          <span>🌟<span>5.0</span></span>
+        </div>
+        <div>Climbing wall</div>
+        <div>
+          <span> Mar</span>
+          <span> 20-26 </span>
+        </div>
+        <div>
+          <div>
+            <span>259</span>
+            <span>lei</span>
+            <span>night</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
