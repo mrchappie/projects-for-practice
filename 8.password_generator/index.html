@@ -30,19 +30,23 @@
         <form onsubmit="return null" class="form-container">
           <div class="password-settings">
             <div class="password-range">
-              <input
-                type="number"
-                name="password-length"
-                id="password-length"
-                class="password-length"
-                min="8"
-                max="50"
-                step="1"
-                value="8"
-              />
-              <input type="range" name="range" id="range" />
+              <h4>Password length</h4>
+              <div class="range-input">
+                <input
+                  type="number"
+                  name="password-length"
+                  id="password-length"
+                  class="password-length"
+                  min="8"
+                  max="50"
+                  step="1"
+                  value="8"
+                />
+                <input type="range" name="range" id="range" />
+              </div>
             </div>
             <div class="charset-options">
+              <h4>Type of characters</h4>
               <div class="letters-uppercase">
                 <label for="letters-uppercase"><span>A-Z</span></label>
                 <input

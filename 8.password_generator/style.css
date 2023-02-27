@@ -196,8 +196,9 @@ body {
   height: 100%;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .app-container
@@ -213,6 +214,21 @@ body {
 
   outline: none;
   border: none;
+}
+
+.app-container
+  .password-customization
+  .form-container
+  .password-settings
+  .password-range
+  .range-input {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .app-container
