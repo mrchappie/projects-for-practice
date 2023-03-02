@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+- Light red: hsl(0, 100%, 67%)
+- Orangey yellow: hsl(39, 100%, 56%)
+- Green teal: hsl(166, 100%, 37%)
+- Cobalt blue: hsl(234, 85%, 45%)
+
+## Gradients
+
+- Light slate blue (background): hsl(252, 100%, 67%)
+- Light royal blue (background): hsl(241, 81%, 54%)
+
+- Violet blue (circle): hsla(256, 72%, 46%, 1)
+- Persian blue (circle): hsla(241, 72%, 46%, 0)
+
+
+
+### Neutral
+
+- White: hsl(0, 0%, 100%)
+- Pale blue: hsl(221, 100%, 96%)
+- Light lavender: hsl(241, 100%, 89%)
+- Dark gray blue: hsl(224, 30%, 27%)
+ */
+
+:root {
+  --white: #fff;
+  --black: #111;
+  --box-shadow: rgba(0, 0, 0, 0.2);
+
+  /*  */
+  --border: 30px;
+
+  /*  */
+  --font: 'Hanken Grotesk', sans-serif;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+
+  overflow: hidden;
+
+  font-size: 18px;
+}
+
+.container {
+  width: 600px;
+  height: 400px;
+  background-color: var(--white);
+
+  box-shadow: 10px 10px 35px var(--box-shadow);
+  border-radius: var(--border);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+@media (max-width: 620px) {
+  body {
+    height: 120vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+  }
+
+  .container {
+    width: 300px;
+    height: 800px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+.container > div {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  padding: 10px;
+}
+/*  */
+/*  */
+/* LEFT SIDE */
+/*  */
+/*  */
+.score {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgb(120, 87, 255), rgb(46, 43, 233));
+  border-radius: var(--border);
+
+  font-family: var(--font);
+}
+
+.score div {
+  /* width: 100%; */
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.title {
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--white);
+
+  margin-top: 5px;
+}
+
+.score .circle {
+  color: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(
+    to bottom,
+    rgb(78, 33, 202),
+    rgba(36, 33, 202, 0)
+  );
+  width: 150px;
+  height: 150px;
+
+  border-radius: 50%;
+
+  font-size: 1.2rem;
+  font: var(--font);
+  font-weight: bold;
+}
+
+.circle .inside-text span {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--white);
+}
+
+.your-score h3 {
+  height: 2em;
+  color: var(--white);
+
+  font-size: 3rem;
+  font: var(--font);
+  font-weight: bold;
+}
+
+.your-score p {
+  text-align: center;
+  width: 13em;
+  font-family: inherit;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/*  */
+/*  */
+/* RIGHT SIDE */
+/*  */
+/*  */
+
+.summary {
+  width: 100%;
+  height: 100%;
+  /* background: linear-gradient(to bottom, rgb(120, 87, 255), rgb(46, 43, 233)); */
+  border-radius: 30px;
+
+  font-family: var(--font);
+  font-weight: 600;
+}
+
+.summary ul li {
+  width: 15rem;
+  height: 3rem;
+  padding: 0rem 0.5rem;
+
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.summary ul li > div {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.summary ul li > div .left {
+  display: flex;
+}
+
+.summary ul li > div .left > span {
+  margin-left: 0.5rem;
+}
+
+li .content .right {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+li .content .right span {
+  color: hsl(224, 30%, 27%);
+}
+
+.summary ul li:nth-child(1) {
+  background-color: rgba(255, 87, 87, 0.05);
+  margin-bottom: 10px;
+  color: hsl(0, 100%, 67%);
+}
+.summary ul li:nth-child(2) {
+  background-color: rgba(255, 176, 31, 0.05);
+  margin-bottom: 10px;
+  color: hsl(39, 100%, 56%);
+}
+.summary ul li:nth-child(3) {
+  background-color: rgba(0, 189, 145, 0.05);
+  margin-bottom: 10px;
+  color: hsl(166, 100%, 37%);
+}
+.summary ul li:nth-child(4) {
+  background-color: rgba(17, 37, 212, 0.05);
+  color: hsl(234, 85%, 45%);
+}
+
+.summary > .title {
+  color: rgba(0, 0, 0, 1);
+  width: 15rem;
+}
+
+button {
+  width: 14rem;
+  height: 3rem;
+
+  background-color: hsl(224, 30%, 27%);
+  color: var(--white);
+
+  font-family: inherit;
+  font-size: 1rem;
+
+  border: none;
+  border-radius: 1.5rem;
+
+  cursor: pointer;
+}

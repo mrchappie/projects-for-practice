@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #012169;
+
+  overflow: hidden;
+}
+/*  */
+/*  */
+/*  */
+.front-lines {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*  */
+/*  */
+/*  */
+.front-lines div:nth-child(1) {
+  position: absolute;
+  width: 200px;
+  height: 100%;
+
+  background-color: #fff;
+  z-index: 1;
+}
+
+.front-lines div:nth-child(2) {
+  position: absolute;
+  width: 130px;
+  height: 100%;
+
+  background-color: #c8102e;
+  z-index: 4;
+}
+
+.front-lines div:nth-child(3) {
+  width: 100%;
+  height: 130px;
+
+  background-color: #c8102e;
+  z-index: 3;
+}
+
+.front-lines div:nth-child(4) {
+  position: absolute;
+  width: 100%;
+  height: 200px;
+
+  background-color: #fff;
+  z-index: 2;
+}
+/*  */
+/*  */
+/*  */
+.back-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*  */
+/*  */
+/*  */
+.back-lines > div:nth-child(1) {
+  position: absolute;
+  width: 150%;
+  height: 200px;
+  background-color: #fff;
+
+  transform: rotate(25deg);
+}
+/*  */
+/*  */
+/*  */
+.back-lines > div:nth-child(1) > div:nth-child(1) {
+  position: absolute;
+  bottom: 35px;
+
+  background-color: #c8102e;
+
+  width: 50%;
+  height: 70px;
+}
+
+.back-lines > div:nth-child(2) > div:nth-child(1) {
+  position: absolute;
+  bottom: 35px;
+
+  background-color: #c8102e;
+
+  width: 50%;
+  height: 70px;
+}
+/*  */
+/*  */
+.back-lines > div:nth-child(1) > div:nth-child(2) {
+  position: absolute;
+  top: 35px;
+  right: 0;
+
+  background-color: #c8102e;
+
+  width: 50%;
+  height: 70px;
+}
+
+.back-lines > div:nth-child(2) > div:nth-child(2) {
+  position: absolute;
+  top: 35px;
+  right: 0;
+
+  background-color: #c8102e;
+
+  width: 50%;
+  height: 70px;
+}
+/*  */
+/*  */
+
+.back-lines > div:nth-child(2) {
+  position: absolute;
+  width: 150%;
+  height: 200px;
+  background-color: #fff;
+
+  transform: rotate(-25deg);
+}

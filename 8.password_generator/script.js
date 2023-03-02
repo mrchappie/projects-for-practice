@@ -5,11 +5,13 @@ const lowercaseLetterArr = [
   'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
 ];
 // prettier-ignore
-const symbolsArr = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '{', '[', '}', ']', '|', ':', ';', '"', `'`, '&lt;', ',', '&gt;', '.', '?', '/'];
+const symbolsArr = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '{', '[', '}', ']', '|', ':', ';', '"', `'`, '<', ',', '>', '.', '?', '/'];
+// '&lt;', ',', '&gt;'
 // prettier-ignore
 const numbersArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const passGenerateBtn = document.getElementById('generate-password-btn');
+const passGenerateBtnSec = document.querySelector('.fa-rotate');
 const passResult = document.getElementById('password');
 
 // getting user input options
@@ -50,5 +52,9 @@ const getPass = () => {
 };
 
 passGenerateBtn.addEventListener('click', () => {
-  passResult.innerHTML = getPass();
+  passResult.innerText = getPass();
+});
+
+passGenerateBtnSec.addEventListener('click', () => {
+  passResult.innerText = getPass();
 });
