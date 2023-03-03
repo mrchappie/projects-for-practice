@@ -104,16 +104,14 @@ body {
 /*  */
 /*  */
 .score {
-  width: 100%;
-  height: 100%;
   background: linear-gradient(to bottom, rgb(120, 87, 255), rgb(46, 43, 233));
   border-radius: var(--border);
 
   font-family: var(--font);
+  font-size: inherit;
 }
 
 .score div {
-  /* width: 100%; */
   display: grid;
   place-items: center;
   position: relative;
@@ -152,11 +150,12 @@ body {
   color: var(--white);
 }
 
-.your-score h3 {
+.your-score span {
   height: 2em;
+  width: auto;
   color: var(--white);
 
-  font-size: 3rem;
+  font-size: 1.2rem;
   font: var(--font);
   font-weight: bold;
 }
@@ -176,9 +175,6 @@ body {
 /*  */
 
 .summary {
-  width: 100%;
-  height: 100%;
-  /* background: linear-gradient(to bottom, rgb(120, 87, 255), rgb(46, 43, 233)); */
   border-radius: 30px;
 
   font-family: var(--font);
@@ -263,4 +259,8 @@ button {
   border-radius: 1.5rem;
 
   cursor: pointer;
+}
+
+button:hover {
+  background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
 }
