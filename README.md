@@ -6,8 +6,6 @@ I wil updated every time when I finish a new project.
 
 ## Below you can see a table with all project from this repo
 
-| Project |
-| ------------- | ------------- | -------------  |
 | Number | Name  | Demo | Repository path |
 | ------------- | ------------- | -------------  |
 | 1 | 2 | 3 |
