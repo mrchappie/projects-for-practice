@@ -14,12 +14,25 @@ const passGenerateBtn = document.getElementById('generate-password-btn');
 const passGenerateBtnSec = document.querySelector('.fa-rotate');
 const passResult = document.getElementById('password');
 
+// User input
+const uppercaseLetters = document.getElementById('letters-uppercase');
+const lowercaseLetters = document.getElementById('letters-lowercase');
+const numbers = document.getElementById('numbers');
+const symbols = document.getElementById('symbols');
+const passwordLengthBox = document.getElementById('password-length');
+const passwordLengthSlider = document.getElementById('range');
+
+passwordLengthSlider.addEventListener(
+  'change',
+  () => (passwordLengthBox.value = passwordLengthSlider.value)
+);
+
 // getting user input options
 let upper = true;
-let lower = false;
-let numb = true;
+let lower = true;
+let numb = false;
 let symb = true;
-let passRange = 20;
+let passRange = 16;
 
 // array customizing
 const userArrayOfOptions = (upper, lower, numb, symb) => {
@@ -33,8 +46,27 @@ const userArrayOfOptions = (upper, lower, numb, symb) => {
   return arr;
 };
 
+const getUserInput = () => {
+  const userInputs = {
+    upper: uppercaseLetters.checked,
+    lower: lowercaseLetters.checked,
+    numb: numbers.checked,
+    symb: symbols.checked,
+    passBox: passwordLengthBox.value,
+    passSlider: passwordLengthSlider.value,
+  };
+
+  upper = userInputs.upper;
+  lower = userInputs.lower;
+  numb = userInputs.numb;
+  symb = userInputs.symb;
+  passRange = userInputs.passSlider;
+};
+
 // getting random password function
 const getPass = () => {
+  getUserInput();
+
   const generalArr = userArrayOfOptions(upper, lower, numb, symb);
 
   let pass = '';
@@ -47,14 +79,46 @@ const getPass = () => {
 
   pass.toString();
 
-  console.log(pass);
+  passwordLengthBox.value = passRange;
+
   return pass;
 };
 
 passGenerateBtn.addEventListener('click', () => {
-  passResult.innerText = getPass();
+  // Check for user input
+  if (
+    uppercaseLetters.checked === false &&
+    lowercaseLetters.checked === false &&
+    numbers.checked === false &&
+    symbols.checked === false
+  ) {
+    document.getElementById('title').innerText =
+      'Please select at least one type of characters';
+  } else {
+    document.getElementById('title').innerText = 'Customize your password';
+    passResult.innerText = getPass();
+  }
 });
 
 passGenerateBtnSec.addEventListener('click', () => {
   passResult.innerText = getPass();
+});
+
+const copyBtn = document.querySelector('.fa-copy');
+const main = document.querySelector('.app-container');
+
+copyBtn.addEventListener('click', () => {
+  // Create a fake `textarea` and set the contents to the text
+  // you want to copy
+  const storage = document.createElement('textarea');
+  storage.value = document.getElementById('password').innerText;
+
+  main.appendChild(storage);
+
+  // Copy the text in the fake `textarea` and remove the `textarea`
+
+  storage.select();
+  storage.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(storage.value);
+  main.removeChild(storage);
 });
