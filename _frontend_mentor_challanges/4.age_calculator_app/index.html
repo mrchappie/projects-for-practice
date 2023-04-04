@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="styles/styles.css" />
+
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
+  <body class="page__container">
+    <section class="page__app__container">
+      <form class="page__form">
+        <div class="page__form__inputs">
+          <label class="label__birth__day"
+            >DAY<input
+              type="number"
+              name="day__of__birth"
+              id="day__of__birth"
+              placeholder="DD"
+            />
+            <div class="error label__birth__month__day">error</div></label
+          >
+          <label class="label__birth__month"
+            >MONTH<input
+              type="number"
+              name="month__of__birth"
+              id="month__of__birth"
+              placeholder="MM"
+            />
+            <div class="error label__birth__month__error">error</div>
+          </label>
+          <label class="label__birth__year"
+            >YEAR<input
+              type="number"
+              name="year__of__birth"
+              id="year__of__birth"
+              placeholder="YYYY"
+            />
+            <div class="error label__birth__year__error">error</div></label
+          >
+        </div>
+        <div class="page__form__submit">
+          <button
+            id="page__form__submit__button"
+            class="page__form__submit__button"
+            type="button"
+          >
+            <img src="./assets/images/icon-arrow.svg" alt="" />
+          </button>
+        </div>
+      </form>
+      <section class="display__user__age">
+        <div class="user__years">
+          <span id="user__years" class="years">--</span>&nbsp;years
+        </div>
+        <div class="user__months">
+          <span id="user__months" class="months">--</span>&nbsp;months
+        </div>
+        <div class="user__days">
+          <span id="user__days" class="days">--</span>&nbsp;days
+        </div>
+      </section>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

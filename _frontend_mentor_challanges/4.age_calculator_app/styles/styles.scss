@@ -1,0 +1,143 @@
+@import url('https://fonts.google.com/specimen/Poppins');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: 'Poppins', sans-serif;
+}
+
+// colors
+$white: #fff;
+$black: #000;
+$purple: hsl(259, 100%, 65%);
+$light-red: hsl(0, 100%, 67%);
+$light-grey: hsl(0, 0%, 86%);
+$smokey-grey: hsl(0, 1%, 44%);
+
+// global classes
+%flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+%flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Page style
+.page__container {
+  @extend %flex-row;
+  height: 100vh;
+  background-color: $light-grey;
+}
+
+.page__app__container {
+  @extend %flex-column;
+  background-color: $white;
+
+  border-radius: 20px;
+  padding: 35px;
+
+  border-bottom-right-radius: 150px;
+}
+
+// form style
+.page__form {
+  @extend %flex-column;
+  position: relative;
+
+  .page__form__inputs {
+    @extend %flex-row;
+    gap: 30px;
+    padding-right: 100px;
+    padding-bottom: 50px;
+    margin-right: 100px;
+    border-bottom: 1px solid $light-grey;
+
+    label {
+      @extend %flex-column;
+      flex: 1 0 40px;
+      align-items: flex-start;
+
+      font-size: 15px;
+      font-weight: 600;
+      color: $smokey-grey;
+
+      position: relative;
+
+      input {
+        padding: 10px 20px;
+        margin-top: 10px;
+        font-size: 32px;
+        width: 150px;
+        color: $black;
+        font-weight: 600;
+
+        border: 1px solid $light-grey;
+        border-radius: 10px;
+      }
+
+      .error {
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+
+        color: $light-red;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+// user age style
+.display__user__age {
+  @extend %flex-column;
+  align-items: flex-start;
+  align-content: start;
+  width: 100%;
+
+  padding: 30px 0;
+
+  user-select: none;
+
+  div {
+    font-size: 60px;
+    font-weight: 800;
+    font-style: italic;
+
+    span {
+      color: $purple;
+    }
+  }
+}
+
+// submit button style
+.page__form__submit {
+  .page__form__submit__button {
+    position: absolute;
+    bottom: 0;
+    right: 50px;
+    transform: translateY(50%);
+
+    padding: 15px;
+
+    border: none;
+    background-color: $purple;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $smokey-grey;
+    }
+
+    img {
+      width: 34px;
+    }
+  }
+}
