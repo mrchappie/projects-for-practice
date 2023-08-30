@@ -23,7 +23,7 @@ body {
     position: relative;
 
     > div {
-      width: 120px;
+      width: 140px;
       text-align: center;
     }
 
@@ -37,6 +37,7 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
+      background-color: transparent;
 
       width: 600px;
       aspect-ratio: 1;
