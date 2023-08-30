@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik Iso", cursive;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  font-size: 100px;
+  background-color: black;
+}
+body .clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f20746;
+  position: relative;
+}
+body .clock > div {
+  width: 120px;
+  text-align: center;
+}
+body .clock > span {
+  text-align: center;
+  padding-inline: 5px;
+}
+body .clock #seconds {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  aspect-ratio: 1;
+  z-index: -1;
+  font-size: 500px;
+  color: rgba(255, 255, 255, 0.03);
+}
